@@ -1,0 +1,95 @@
+import React, { useState } from 'react';
+
+const Enroll = () => {
+  const [formData, setFormData] = useState({
+    course: '',
+    name: '',
+    email: '',
+    phone: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form Data:', formData);
+    alert('Thank you for enrolling! We will contact you soon.');
+  };
+
+  return (
+    <div style={{ padding: '40px', maxWidth: '500px', margin: '0 auto' }}>
+      <h1>Enroll Now</h1>
+      <form onSubmit={handleSubmit}>
+        <label>Course</label><br/>
+        <select
+          name="course"
+          value={formData.course}
+          onChange={handleChange}
+          required
+          style={inputStyle}
+        >
+          <option value="">Select a course</option>
+          <option value="Java Full Stack">Java Full Stack</option>
+          <option value="Cloud Computing">Cloud Computing</option>
+          <option value="Business Development">Business Development</option>
+        </select><br/>
+
+        <label>Name</label><br/>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          style={inputStyle}
+        /><br/>
+
+        <label>Email</label><br/>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          style={inputStyle}
+        /><br/>
+
+        <label>Phone</label><br/>
+        <input
+          type="tel"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+          style={inputStyle}
+        /><br/>
+
+        <button type="submit" style={buttonStyle}>Submit</button>
+      </form>
+    </div>
+  );
+};
+
+const inputStyle = {
+  width: '100%',
+  padding: '10px',
+  marginBottom: '15px',
+  borderRadius: '5px',
+  border: '1px solid #ccc',
+  fontSize: '1rem'
+};
+
+const buttonStyle = {
+  width: '100%',
+  padding: '12px',
+  backgroundColor: '#0B5ED7',
+  color: '#fff',
+  fontSize: '1rem',
+  border: 'none',
+  borderRadius: '5px',
+  cursor: 'pointer'
+};
+
+export default Enroll;
