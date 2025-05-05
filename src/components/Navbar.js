@@ -1,7 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'; // adjust path if needed
+import logo from '../assets/logo.png'; // Adjust path if needed
 
+// ✅ All style definitions at the top
+const navStyle = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  padding: '15px 40px',
+  backgroundColor: '#ffffff', // white navbar
+  color: '#000',
+  position: 'sticky',
+  top: 0,
+  zIndex: 1000,
+  borderBottom: '1px solid #ddd'
+};
+
+const logoContainer = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '10px'
+};
+
+const logoStyle = {
+  height: '70px',
+  width: '80px'
+};
+
+const brandText = {
+  color: '#FFD500',
+  textDecoration: 'none',
+  fontSize: '1.4rem',
+  fontWeight: 'bold'
+};
+
+const linkContainer = {
+  display: 'flex',
+  gap: '20px'
+};
+
+const navLinkStyle = {
+  color: '#000000',
+  textDecoration: 'none',
+  fontWeight: 'bold'
+};
+
+// ✅ Component function after styles
 const Navbar = () => {
   return (
     <nav style={navStyle}>
@@ -17,47 +61,6 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-
-const navStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  padding: '15px 40px',
-  backgroundColor: '#0B132B',
-  color: '#fff',
-  position: 'sticky',
-  top: 0,
-  zIndex: 1000
-};
-
-const logoContainer = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '10px'
-};
-
-const logoStyle = {
-  height: '70px',
-  width: '80px'
-};
-
-const brandText = {
-  color: '#fff',
-  textDecoration: 'none',
-  fontSize: '1.4rem',
-  fontWeight: 'bold'
-};
-
-const linkContainer = {
-  display: 'flex',
-  gap: '20px'
-};
-
-const navLinkStyle = {
-  color: '#fff',
-  textDecoration: 'none',
-  fontWeight: 'bold'
 };
 
 export default Navbar;
