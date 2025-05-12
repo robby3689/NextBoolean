@@ -1,14 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { auth } from "./firebase";
 
 function Dashboard() {
+  const handleLogout = () => {
+    auth.signOut();
+  };
+
   return (
     <div>
       <h1>Dashboard</h1>
       <p>Welcome to the dashboard!</p>
-      <Link to="/">Logout</Link>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 }
-
-export default Dashboard;
